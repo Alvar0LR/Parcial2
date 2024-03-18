@@ -5,12 +5,12 @@ public class Main {
         Empleados empleados = Empleados.darAltaEmpleados();
 
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Introduzca el porcentaje de aumento de salario: ");
+        System.out.print(Magic.MENSAJE_PORCENTAJE_SALARIO);
         double porcentaje = scanner.nextDouble();
 
         empleados.aumentarSalario(porcentaje);
 
-        System.out.println("Lista de Empleados:");
+        System.out.println(Magic.LISTA_EMPLEADOS);
         empleados.mostrarEmpleados();
 
         scanner.close();
