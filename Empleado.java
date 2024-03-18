@@ -18,27 +18,44 @@ class Empleado {
                 '}';
     }
 
-    public String getNombre() {
-        return nombre;
+    public void aumentarSalario(double porcentaje) {
+        salario *= (1 + porcentaje / 100);
+    }
+}
+
+class Empleados {
+    private Empleado[] lista;
+
+    public Empleados(Empleado[] lista) {
+        this.lista = lista;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void mostrarEmpleados() {
+        for (Empleado empleado : lista) {
+            System.out.println(empleado);
+        }
     }
 
-    public String getCargo() {
-        return cargo;
+    public void aumentarSalario(double porcentaje) {
+        for (Empleado empleado : lista) {
+            empleado.aumentarSalario(porcentaje);
+        }
     }
 
-    public void setCargo(String cargo) {
-        this.cargo = cargo;
+    public static Empleados darAltaEmpleados() {
+        Empleado[] empleados = new Empleado[3];
+        empleados[0] = new Empleado("Juan", "Desarrollador", 50000);
+        empleados[1] = new Empleado("María", "Diseñadora", 45000);
+        empleados[2] = new Empleado("Pedro", "Gerente", 60000);
+        return new Empleados(empleados);
     }
 
-    public double getSalario() {
-        return salario;
+    public Empleado[] getLista() {
+        return lista;
     }
 
-    public void setSalario(double salario) {
-        this.salario = salario;
+    public void setLista(Empleado[] lista) {
+        this.lista = lista;
     }
+
 }
