@@ -12,4 +12,12 @@ public class SistemaGestionEmpleados {
             empleado.salario = nuevoSalario;
         }
     }
+
+    public Empleado[] getEmpleados() {
+        return empleados;
+    }
+
+    public void setEmpleados(Empleado[] empleados) {
+        this.empleados = empleados;
+    }
 }
